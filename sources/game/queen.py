@@ -12,8 +12,8 @@ class Queen(Piece):
         new_row = newPosition.row
 
 
-        col_diff = newPosition.column - self.position.column
-        row_diff = newPosition.row - self.position.row
+        col_diff = new_col - current_col
+        row_diff = new_row - current_row
 
         # la reine doit bouger tout deplacement < 0 est annulé
 
@@ -27,6 +27,21 @@ class Queen(Piece):
 
         if not (is_straight or is_diagonal):
             return False
+
+        step_col = 0 if col_diff == 0 else (1 if col_diff > 0 else -1)
+        step_row = 0 if row_diff == 0 else (1 if row_diff > 0 else -1)
+
+        check_col = current_col + step_col
+        check_row = current_row + step_row
+
+        while check_col !=  new_col or check_row != new_row:
+            intermediate_position = type(self.position)(chr(check_col), check_row)
+
+            if board.getPiece(intermediate_position) is not None:
+                return False
+
+            check_col += step_col
+            check_row += step_row
 
     # verification si il existe une piece a l'arrivée
 

@@ -13,7 +13,7 @@ class King(Piece):
 
         #le roi doit bouger seulement de 1 case tout deplacement > 1 est annulé
 
-        if col_diff > 1 and row_diff > 1:
+        if col_diff > 1 or row_diff > 1:
             return False
 
         #verification si il existe une piece a l'arrivée
