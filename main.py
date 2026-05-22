@@ -1,6 +1,6 @@
 import sys
 from src.chess_game import Chess
-from src.save import save_game, load_game
+from src.sauvegarde2 import save_game, load_game
 
 def main():
     args = sys.argv[1:]
