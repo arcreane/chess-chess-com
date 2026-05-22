@@ -11,10 +11,10 @@ class Bishop(Piece):
         col_diff = new_col - current_col
         row_diff = new_row - current_row
 
-        if coll_diff == 0 and row_diff == 0:
+        if col_diff == 0 and row_diff == 0:
             return False
 
-        is_diagonal = abs(coll_diff) == abs(row_diff)
+        is_diagonal = abs(col_diff) == abs(row_diff)
 
         if not is_diagonal:
             return False
