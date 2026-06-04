@@ -25,6 +25,8 @@ class Board:
 
     def get(self, pos):
         return self.pieces.get((pos.column, pos.row))
+    def getPiece(self, pos):
+        return self.get(pos)
 
     def remove(self, pos):
         self.pieces.pop((pos.column, pos.row), None)
