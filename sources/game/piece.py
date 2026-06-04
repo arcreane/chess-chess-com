@@ -2,12 +2,6 @@ from abc import ABC, abstractmethod
 
 
 class Piece (ABC):
-    """
-    Classe abstraite commune à toutes les pièces.
-    Chaque pièce possède au minimum :
-    - une position
-    - une couleur (0 = blanc, 1 = noir)
-    """
 
     def __init__(self, position, color):
         self.position = position
