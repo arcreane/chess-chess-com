@@ -14,8 +14,9 @@ class Knight(Piece):
         start = self.position
 
         # Calcul du déplacement horizontal et vertical
-        dx = abs(start[0] - newPosition[0])
-        dy = abs(start[1] - newPosition[1])
+
+        dx = abs(ord(newPosition.column) - ord(self.position.column))
+        dy = abs(newPosition.row - self.position.row)
 
         # Vérifie le déplacement en L du cavalier
         valid_move = (dx == 2 and dy == 1) or (dx == 1 and dy == 2)
