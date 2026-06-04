@@ -2,6 +2,11 @@ import os
 import sys
 import pygame
 
+def temps_partie():
+    """Renvoie le temps ecoule depuis le debut, formate en MM:SS."""
+    secondes = pygame.time.get_ticks() // 1000   # ms -> secondes
+    minutes = secondes // 60
+    return f"{minutes:02d}:{secondes % 60:02d}"
 # --- Rendre le moteur (board.py + pieces) importable ---
 GAME_DIR = os.path.join(os.path.dirname(__file__), "..", "game")
 sys.path.insert(0, GAME_DIR)
@@ -168,6 +173,7 @@ def demo():
 
         # trait + message
         screen.blit(big.render(f"Tour des {color()}", True, TEXT), (MARGIN, 8))
+        screen.blit(big.render(temps_partie(), True, TEXT), (WIN_W - 110, 8))
         if message:
             m = font.render(message, True, ALERT)
             screen.blit(m, (WIN_W - m.get_width() - MARGIN, 14))

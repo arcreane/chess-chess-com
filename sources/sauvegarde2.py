@@ -1,6 +1,6 @@
 import json
 import os
-from src.pieces import King, Queen, Rook, Bishop, Knight, Pawn
+from sources.pieces import King, Queen, Rook, Bishop, Knight, Pawn
 
 PIECES = {"King": King, "Queen": Queen, "Rook": Rook, "Bishop": Bishop, "Knight": Knight, "Pawn": Pawn}
 
