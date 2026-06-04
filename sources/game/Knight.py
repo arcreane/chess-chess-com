@@ -36,9 +36,6 @@ class Knight(Piece):
 
     def __str__(self):
 
-        # Cavalier blanc
-        if self.color == 0:
-            return "N"
 
         # Cavalier noir
-        return "n"
+        return "N"
