@@ -1,6 +1,6 @@
 from piece import Piece
 
-class Rook(Piece):
+class Bishop(Piece):
 
     def isValidMove(self, newPosition, board):
         current_col = ord(self.position.column)
@@ -14,13 +14,13 @@ class Rook(Piece):
         if col_diff == 0 and row_diff == 0:
             return False
 
-        is_straight = (col_diff == 0 or row_diff == 0)
+        is_diagonal = abs(col_diff) == abs(row_diff)  #valeur absolu
 
-        if not is_straight:
+        if not is_diagonal:
             return False
 
-        step_col = 0 if col_diff == 0 else (1 if col_diff > 0 else -1)
-        step_row = 0 if row_diff == 0 else (1 if row_diff > 0 else -1)
+        step_col = 1 if col_diff > 0 else -1
+        step_row = 1 if row_diff > 0 else -1
 
         check_col = current_col + step_col
         check_row = current_row + step_row
@@ -39,6 +39,10 @@ class Rook(Piece):
         if self.is_same_color(target_piece):
             return False
 
+        return True
+
     def __str__(self):
-        return "R"
+        return "B"
+
+
 

@@ -1,6 +1,6 @@
 from piece import Piece
 
-class Bishop(Piece):
+class Rook(Piece):
 
     def isValidMove(self, newPosition, board):
         current_col = ord(self.position.column)
@@ -14,13 +14,13 @@ class Bishop(Piece):
         if col_diff == 0 and row_diff == 0:
             return False
 
-        is_diagonal = abs(col_diff) == abs(row_diff)
+        is_straight = (col_diff == 0 or row_diff == 0)
 
-        if not is_diagonal:
+        if not is_straight:
             return False
 
-        step_col = 1 if col_diff > 0 else -1
-        step_row = 1 if row_diff > 0 else -1
+        step_col = 0 if col_diff == 0 else (1 if col_diff > 0 else -1)
+        step_row = 0 if row_diff == 0 else (1 if row_diff > 0 else -1)
 
         check_col = current_col + step_col
         check_row = current_row + step_row
@@ -39,10 +39,6 @@ class Bishop(Piece):
         if self.is_same_color(target_piece):
             return False
 
-        return True
-
     def __str__(self):
-        return "B"
-
-
+        return "R"                   #donne l'id de la tour
 
