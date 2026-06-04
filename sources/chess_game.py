@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "game"))
 
 from board import Board, Position, WHITE, BLACK
-from sources.AIplayer import AIbot
+from game.AIplayer import AIbot
 from sources.sauvegarde2 import save_game, load_game
 
 
