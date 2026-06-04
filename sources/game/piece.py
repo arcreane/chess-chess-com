@@ -6,7 +6,7 @@ class Piece (ABC):
     def __init__(self, position, color):
         self.position = position
         self.color = color
-
+        self.has_moved = False
     def move_to(self, new_position):
 
         self.position = new_position
@@ -27,3 +27,10 @@ class Piece (ABC):
 
         pass
 #Donne l'ID de la pièce
+
+from king import King
+from queen import Queen
+from Rook import Rook
+from Bishop import Bishop
+from Knight import Knight
+from Pawn import Pawn
