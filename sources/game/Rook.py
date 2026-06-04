@@ -38,6 +38,7 @@ class Rook(Piece):
 
         if self.is_same_color(target_piece):
             return False
+        return True
 
     def __str__(self):
         return "R"                   #donne l'id de la tour
